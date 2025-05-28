@@ -107,9 +107,10 @@ export default function Home() {
           const {latitude, longitude} = position.coords;
           console.log('lat and long', latitude, longitude);
 
+          let weatherRes;
           //weather
           try {
-            const weatherRes = await getWeather(latitude, longitude);
+            weatherRes = await getWeather(latitude, longitude);
             console.log('weather data', weatherRes);
             setWeatherData(weatherRes?.data || null);
           } catch (error) {

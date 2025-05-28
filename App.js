@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text, View, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './src/Home';
 import Settings from './src/Settings';
-import MaterialCommunityIcons from 'react-native-vector-icons/Entypo'; // Optional for icons
+import MaterialCommunityIcons from 'react-native-vector-icons/Entypo';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,6 @@ export default function App() {
       <Tab.Navigator
         screenOptions={({route}) => ({
           tabBarIcon: ({focused}) => {
-            let iconName;
             if (route.name === 'Home') {
               return (
                 <MaterialCommunityIcons
@@ -26,8 +26,8 @@ export default function App() {
               );
             } else if (route.name === 'Settings') {
               return (
-                <MaterialCommunityIcons
-                  name="home"
+                <Ionicons
+                  name="settings-sharp"
                   size={20}
                   color={focused ? '#6347EB' : '#000'}
                 />

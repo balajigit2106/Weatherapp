@@ -105,10 +105,6 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-     lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
 }
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
